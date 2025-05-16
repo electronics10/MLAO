@@ -352,6 +352,7 @@ Let me know your choice, and I’ll guide you through it!
 
 📁 Folder Structure
 
+```
 antenna_optimizer/
 ├── __main__.py
 ├── config.py
@@ -363,4 +364,5 @@ antenna_optimizer/
 │   └── utils.py
 └── train/
     └── trainer.py
+```
 
