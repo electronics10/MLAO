@@ -256,13 +256,13 @@ class Fitness_Evaluator():
         os.makedirs("./data", exist_ok=True)
         df = pd.DataFrame(self.fitness_record, columns = ['best_fitness'])
         df.to_csv(f'data/MLAGA_{seed}.csv', index=False) 
-        # plt.plot(self.fitness_record, label='MLAO-GA', linestyle='-.', color='red')
-        # plt.xlabel("Number of Simulations")
-        # plt.ylabel("Fitness")
-        # plt.title("Convergence Rate")
-        # plt.legend()
-        # plt.axhline(y = 0.4, linestyle=':', color = '#000')
-        # plt.show()
+        plt.plot(self.fitness_record, label='MLAO-GA', linestyle='-.', color='red')
+        plt.xlabel("Number of Simulations")
+        plt.ylabel("Fitness")
+        plt.title("Convergence Rate")
+        plt.legend()
+        plt.axhline(y = 0.4, linestyle=':', color = '#000')
+        plt.show()
 
 
 # if __name__ == "__main__":
