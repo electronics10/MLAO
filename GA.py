@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
-from settings import CONVERGENCE, POPULATION_SIZE, SELECT_RATE, MUTATE_RATE, SEED
+from settings import CONVERGENCE, POPULATION_SIZE, SELECT_RATE, MUTATE_RATE
 
 def calculate_fitness(binary_array, target=(2.4,2.5), goal=-6):
     pop_index = int(''.join(map(str, binary_array)), 2) # binary back to decimal
@@ -46,11 +46,11 @@ def mutate(individual, rate=0.1):
     return np.logical_xor(individual, mask).astype(int)
 
 
-if __name__ == "__main__":
-
+# if __name__ == "__main__":
+def run(seed = 2):
     # Create population
-    np.random.seed(SEED)
-    pop_indices = np.random.randint(1599, size = POPULATION_SIZE)
+    np.random.seed(seed)
+    pop_indices = np.random.randint(4096, size = POPULATION_SIZE)
     population = []
     for i in range(POPULATION_SIZE):
         individual = np.array([int(bit) for bit in format(pop_indices[i], '012b')])
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     generation = 0
     best_fitness = -1000
     fitness_record = []
-    while best_fitness < CONVERGENCE:
+    while len(fitness_record) < 2000:
         # Fitness Assignment
         scored_pop, pop_avg_fitness = fitness_assign_and_sort(population) # [(individual, fitness)]
         best_fitness = scored_pop[0][1]
@@ -95,12 +95,12 @@ if __name__ == "__main__":
     # Store and Show data
     os.makedirs("./data", exist_ok=True)
     df = pd.DataFrame(fitness_record, columns = ['best_fitness'])
-    df.to_csv(f'data/GA_{SEED}.csv', index=False) 
-    import matplotlib.pyplot as plt
-    plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
-    plt.xlabel("Number of Simulations")
-    plt.ylabel("Fitness")
-    plt.title("Convergence Rate")
-    plt.legend()
-    plt.axhline(y = 190, linestyle=':', color = '#000')
-    plt.show()
+    df.to_csv(f'data/GA_{seed}.csv', index=False) 
+    # import matplotlib.pyplot as plt
+    # plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
+    # plt.xlabel("Number of Simulations")
+    # plt.ylabel("Fitness")
+    # plt.title("Convergence Rate")
+    # plt.legend()
+    # plt.axhline(y = 0.4, linestyle=':', color = '#000')
+    # plt.show()
