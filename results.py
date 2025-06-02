@@ -67,7 +67,7 @@ def one_by_one():
         plt.plot(mlaga, label='MLAO-GA', linestyle='-.', color='red')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
-        plt.title("Antenna Fitness")
+        plt.title(f"Antenna Fitness (case {i})")
         plt.legend()
         plt.axhline(y = 0.5, linestyle=':', color = '#000')
     plt.show()
