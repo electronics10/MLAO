@@ -24,8 +24,19 @@ def plot_topology(indices):
         topology.insert(9,1)
         topology.insert(10,1)
         topology = np.array(topology).reshape((4,4))
-        im = plt.imshow(topology, cmap='binary')
-        plt.title(f"Topology{i}")
+        plt.imshow(topology, cmap='binary', vmin=0, vmax=1)
+
+        # Turn off ticks and labels
+        plt.xticks([])
+        plt.yticks([])
+
+        # Draw custom grid for 4x4 cells
+        for x in range(5):  # 0 to 4
+            plt.axhline(x - 0.5, color='gray', linewidth=0.5)
+            plt.axvline(x - 0.5, color='gray', linewidth=0.5)
+
+        plt.title(f"Topology {i}")
+        plt.tight_layout()
 
 
 if __name__ == "__main__":
