@@ -96,13 +96,11 @@ def run(seed = 2):
     os.makedirs("./data", exist_ok=True)
     df = pd.DataFrame(fitness_record, columns = ['best_fitness'])
     df.to_csv(f'data/GA_{seed}.csv', index=False) 
-    import matplotlib.pyplot as plt
-    plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
-    plt.xlabel("Number of Simulations")
-    plt.ylabel("Fitness")
-    plt.title("Convergence Rate")
-    plt.legend()
-    plt.axhline(y = 0.4, linestyle=':', color = '#000')
-    plt.show()
-
-run()
+    # import matplotlib.pyplot as plt
+    # plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
+    # plt.xlabel("Number of Simulations")
+    # plt.ylabel("Fitness")
+    # plt.title("Convergence Rate")
+    # plt.legend()
+    # plt.axhline(y = 0.4, linestyle=':', color = '#000')
+    # plt.show()
