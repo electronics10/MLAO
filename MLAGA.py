@@ -64,8 +64,9 @@ class Fitness_Evaluator():
     def __init__(self):
         self.fitness_record = []
         self.model_mse = 100
-        self.data_path = "training_data.csv"
-        files = [f for f in os.listdir('./') if f.startswith("training")]
+        self.ml_folder = "artifacts_CNN"
+        self.data_path = "artifacts_CNN/training_data.csv"
+        files = [f for f in os.listdir(self.ml_folder) if f.startswith("training")]
         for file in files: os.remove(file) # clear legacy
         print("legacy cleaned")
         self.model = AntennaCNN()
@@ -171,7 +172,7 @@ class Fitness_Evaluator():
         for individual in population: population16.append(np.ravel(self.graph(individual))) # 16 digits
         population16 = np.array(population16)
 
-        folder = "artifacts_CNN"
+        folder = self.ml_folder
         device = torch.device("mps" if torch.backends.mps.is_built() else "cuda" if torch.cuda.is_available() else "cpu")
         # Evaluation and plotting
         x_scaler = pickle.load(open(f"{folder}/x_scaler.pkl", "rb"))
@@ -192,7 +193,7 @@ class Fitness_Evaluator():
         return scored_pop
 
     def train(self): 
-        folder = "artifacts_CNN"
+        folder = self.ml_folder
         os.makedirs(folder, exist_ok=True)
         # Device configuration
         device = torch.device("mps" if torch.backends.mps.is_built() else "cuda" if torch.cuda.is_available() else "cpu")
