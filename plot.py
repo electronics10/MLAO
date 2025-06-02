@@ -24,7 +24,7 @@ def plot_topology(indices):
         topology.insert(9,1)
         topology.insert(10,1)
         topology = np.array(topology).reshape((4,4))
-        plt.imshow(topology, cmap='binary', vmin=0, vmax=1)
+        plt.imshow(topology, cmap='binary', vmin=0, vmax=1, origin = 'lower')
 
         # Turn off ticks and labels
         plt.xticks([])
