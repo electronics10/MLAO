@@ -308,3 +308,4 @@ def run(seed = 2):
         generation += 1
 
     fitness_evaluator.store_and_show_fitness(seed)
+run()
