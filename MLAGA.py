@@ -66,8 +66,7 @@ class Fitness_Evaluator():
         self.model_mse = 100
         self.ml_folder = "artifacts_CNN"
         self.data_path = "artifacts_CNN/training_data.csv"
-        files = [f for f in os.listdir(self.ml_folder) if f.startswith("training")]
-        for file in files: os.remove(file) # clear legacy
+        if os.path.exists(self.data_path): os.remove(self.data_path)
         print("legacy cleaned")
         self.model = AntennaCNN()
         self.threshold = 0.2
