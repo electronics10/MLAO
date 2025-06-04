@@ -8,7 +8,6 @@ from sklearn.model_selection import train_test_split
 import pickle
 import torch.nn as nn
 import torch.optim as optim
-import matplotlib.pyplot as plt
 from settings import CONVERGENCE, POPULATION_SIZE, SELECT_RATE, MUTATE_RATE
 
 def crossover(p1, p2):
@@ -299,6 +298,7 @@ def run(seed = 2, store = False, show = False):
         df = pd.DataFrame(fitness_evaluator.fitness_record, columns = ['best_fitness'])
         df.to_csv(f'data/MLAGA_{seed}.csv', index=False)
     if show:
+        import matplotlib.pyplot as plt
         plt.plot(fitness_evaluator.fitness_record, label='MLAO-GA', linestyle='-.', color='red')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
@@ -308,4 +308,4 @@ def run(seed = 2, store = False, show = False):
         plt.show()
 
 if __name__ == "__main__":
-    run(seed = 2, show = True)
+    run(seed = 2, store = True, show = True)
