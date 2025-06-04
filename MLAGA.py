@@ -302,10 +302,10 @@ def run(seed = 2, store = False, show = False):
         plt.plot(fitness_evaluator.fitness_record, label='MLAO-GA', linestyle='-.', color='red')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
-        plt.title("Convergence Rate")
+        plt.title("Antenna Fitness")
         plt.legend()
         plt.axhline(y = 0.5, linestyle=':', color = '#000')
         plt.show()
 
 if __name__ == "__main__":
-    run(seed = 2, store = False, show = True)
+    run(seed = 2, store = True, show = True)
