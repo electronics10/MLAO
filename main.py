@@ -1,6 +1,6 @@
 import GA
 import MLAGA
 
-for seed in range(50):
-    GA.run(seed)
-    MLAGA.run(seed)
+for i in range(50):
+    GA.run(seed = i, store = True)
+    MLAGA.run(seed = i, store = True)
