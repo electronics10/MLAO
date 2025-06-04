@@ -45,9 +45,7 @@ def mutate(individual, rate=0.1):
     mask = np.random.rand(*individual.shape) < rate
     return np.logical_xor(individual, mask).astype(int)
 
-
-# if __name__ == "__main__":
-def run(seed = 2):
+def run(seed = 2, store = False, show = False):
     # Create population
     np.random.seed(seed)
     pop_indices = np.random.randint(4096, size = POPULATION_SIZE)
@@ -92,15 +90,20 @@ def run(seed = 2):
 
         generation += 1
 
-    # Store and Show data
-    os.makedirs("./data", exist_ok=True)
-    df = pd.DataFrame(fitness_record, columns = ['best_fitness'])
-    df.to_csv(f'data/GA_{seed}.csv', index=False) 
-    # import matplotlib.pyplot as plt
-    # plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
-    # plt.xlabel("Number of Simulations")
-    # plt.ylabel("Fitness")
-    # plt.title("Convergence Rate")
-    # plt.legend()
-    # plt.axhline(y = 0.4, linestyle=':', color = '#000')
-    # plt.show()
+    if store:
+        # Store and Show data
+        os.makedirs("./data", exist_ok=True)
+        df = pd.DataFrame(fitness_record, columns = ['best_fitness'])
+        df.to_csv(f'data/GA_{seed}.csv', index=False) 
+    if show:
+        import matplotlib.pyplot as plt
+        plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
+        plt.xlabel("Number of Simulations")
+        plt.ylabel("Fitness")
+        plt.title("Convergence Rate")
+        plt.legend()
+        plt.axhline(y = 0.5, linestyle=':', color = '#000')
+        plt.show()
+
+if __name__ == "__main__":
+    run(show = True)
