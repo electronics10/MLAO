@@ -100,7 +100,7 @@ def run(seed = 2, store = False, show = False):
         plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
-        plt.title("Convergence Rate")
+        plt.title("Antenna Fitness")
         plt.legend()
         plt.axhline(y = 0.5, linestyle=':', color = '#000')
         plt.show()
