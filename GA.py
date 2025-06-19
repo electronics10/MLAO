@@ -97,7 +97,7 @@ def run(seed = 2, store = False, show = False):
         df.to_csv(f'data/GA_{seed}.csv', index=False) 
     if show:
         import matplotlib.pyplot as plt
-        plt.plot(fitness_record, label='GA', linestyle='-.', color='blue')
+        plt.plot(fitness_record, label='GA', linestyle='--', color='blue')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
         plt.title("Antenna Fitness")
