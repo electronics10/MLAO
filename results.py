@@ -51,7 +51,7 @@ def average(truncate = 2010):
     plt.plot(mlaga, label='MLAO-GA', linestyle='-.', color='red')
     plt.xlabel("Number of Simulations")
     plt.ylabel("Average Fitness")
-    plt.title(f"Antenna Fitness ({len(files)-1} cases)")
+    plt.title(f"Antenna Fitness ({len(files)} cases)")
     plt.legend()
     # plt.axhline(y = 0.65, linestyle=':', color = '#000')
     # plt.grid()
