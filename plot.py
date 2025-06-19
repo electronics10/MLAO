@@ -10,7 +10,7 @@ def plot_s11(indices):
         s11 = df.iloc[:, 1]
         plt.plot(frequency, s11, label=f'{i}')
         plt.xlabel("Frequency (GHz)")
-        plt.ylabel("s11 (dB)")
+        plt.ylabel("|S11| (dB)")
         plt.title("S11")
         plt.legend(loc = 'lower left')
         plt.grid()
