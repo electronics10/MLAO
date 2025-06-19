@@ -106,4 +106,4 @@ def run(seed = 2, store = False, show = False):
         plt.show()
 
 if __name__ == "__main__":
-    run(seed = 2, store = False, show = True)
+    run(seed = 3, store = False, show = True)
