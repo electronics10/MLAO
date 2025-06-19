@@ -54,7 +54,7 @@ def average(truncate = 2010):
     plt.title(f"Antenna Fitness ({len(files)-1} cases)")
     plt.legend()
     # plt.axhline(y = 0.65, linestyle=':', color = '#000')
-    plt.grid()
+    # plt.grid()
     plt.show()
 
 def one_by_one():
