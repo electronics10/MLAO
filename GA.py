@@ -102,7 +102,7 @@ def run(seed = 2, store = False, show = False):
         plt.ylabel("Fitness")
         plt.title("Antenna Fitness")
         plt.legend()
-        plt.axhline(y = 0.5, linestyle=':', color = '#000')
+        # plt.axhline(y = 0.5, linestyle=':', color = '#000')
         plt.show()
 
 if __name__ == "__main__":
