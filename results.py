@@ -76,4 +76,4 @@ def one_by_one():
 
 if __name__ == "__main__":
     one_by_one()
-    # average()
+    average()
