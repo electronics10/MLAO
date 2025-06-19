@@ -300,7 +300,7 @@ def run(seed = 2, store = False, show = False):
         df.to_csv(f'data/MLAGA_{seed}.csv', index=False)
     if show:
         import matplotlib.pyplot as plt
-        plt.plot(fitness_evaluator.fitness_record, label='MLAO-GA', linestyle='-.', color='red')
+        plt.plot(fitness_evaluator.fitness_record, label='MLAO-GA', linestyle=':', color='red')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
         plt.title("Antenna Fitness")
