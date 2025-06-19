@@ -53,7 +53,7 @@ def average(truncate = 2010):
     plt.ylabel("Average Fitness")
     plt.title(f"Antenna Fitness ({len(files)-1} cases)")
     plt.legend()
-    plt.axhline(y = 0.65, linestyle=':', color = '#000')
+    # plt.axhline(y = 0.65, linestyle=':', color = '#000')
     plt.grid()
     plt.show()
 
@@ -69,7 +69,7 @@ def one_by_one():
         plt.ylabel("Fitness")
         plt.title(f"Antenna Fitness (case {i})")
         plt.legend()
-        plt.axhline(y = 0.5, linestyle=':', color = '#000')
+        # plt.axhline(y = 0.5, linestyle=':', color = '#000')
     plt.show()
 
 if __name__ == "__main__":
