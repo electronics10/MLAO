@@ -64,6 +64,7 @@ class Fitness_Evaluator():
         self.fitness_record = []
         self.model_mse = 100
         self.ml_folder = "artifacts_CNN"
+        os.makedirs(f"./{self.ml_folder}", exist_ok=True)
         self.data_path = "artifacts_CNN/training_data.csv"
         if os.path.exists(self.data_path): os.remove(self.data_path)
         print("legacy cleaned")
