@@ -13,7 +13,7 @@ def plot_s11(indices):
         plt.ylabel("|S11| (dB)")
         plt.title("S11")
         plt.legend(loc = 'lower left')
-        plt.grid()
+        # plt.grid()
     
 def plot_topology(indices):
     for i in indices:
