@@ -2,7 +2,7 @@ import numpy as np
 import csv
 import pandas as pd
 
-def calculate_fitness(binary_array, target=(1.5,1.55), goal=-6):
+def calculate_fitness(binary_array, target=(1.425,1.575), goal=-10):
     pop_index = int(''.join(map(str, binary_array)), 2) # binary back to decimal
     lfreq = target[0]
     hfreq = target[1]
