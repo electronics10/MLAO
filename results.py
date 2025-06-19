@@ -47,7 +47,7 @@ def average(truncate = 2010):
     ga = np.average(np.array(ga), axis=0)
     mlaga = np.average(np.array(mlaga), axis=0)
 
-    plt.plot(ga, label='GA', linestyle='-', color='blue')
+    plt.plot(ga, label='GA', linestyle='--', color='blue')
     plt.plot(mlaga, label='MLAO-GA', linestyle=':', color='red')
     plt.xlabel("Number of Simulations")
     plt.ylabel("Average Fitness")
@@ -62,7 +62,7 @@ def one_by_one():
     for i in indices:
         plt.figure(i)
         ga = pd.read_csv(f"data/GA_{i}.csv").iloc[:,0].values
-        plt.plot(ga, label='GA', linestyle='-', color='blue')
+        plt.plot(ga, label='GA', linestyle='--', color='blue')
         mlaga = pd.read_csv(f"data/MLAGA_{i}.csv").iloc[:,0].values
         plt.plot(mlaga, label='MLAO-GA', linestyle=':', color='red')
         plt.xlabel("Number of Simulations")
