@@ -73,5 +73,5 @@ def one_by_one():
     plt.show()
 
 if __name__ == "__main__":
-    one_by_one()
-    # average()
+    # one_by_one()
+    average()
