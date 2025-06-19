@@ -63,8 +63,8 @@ def one_by_one():
         plt.figure(i)
         ga = pd.read_csv(f"data/GA_{i}.csv").iloc[:,0].values
         plt.plot(ga, label='GA', linestyle='--', color='blue')
-        mlaga = pd.read_csv(f"data/MLAGA_{i}.csv").iloc[:,0].values
-        plt.plot(mlaga, label='MLAO-GA', linestyle=':', color='red')
+        # mlaga = pd.read_csv(f"data/MLAGA_{i}.csv").iloc[:,0].values
+        # plt.plot(mlaga, label='MLAO-GA', linestyle=':', color='red')
         plt.xlabel("Number of Simulations")
         plt.ylabel("Fitness")
         plt.title(f"Antenna Fitness (case {i})")
@@ -73,5 +73,5 @@ def one_by_one():
     plt.show()
 
 if __name__ == "__main__":
-    # one_by_one()
-    average()
+    one_by_one()
+    # average()
