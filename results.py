@@ -49,7 +49,7 @@ def average(truncate = 2010):
 
     plt.plot(ga, label='GA', linestyle='--', color='blue')
     plt.plot(mlaga, label='MLAO-GA', linestyle=':', color='red')
-    plt.xlabel("Number of Simulations")
+    plt.xlabel("Number of Full-wave EM Simulations")
     plt.ylabel("Average Fitness")
     plt.xlim(0, 2010)
     plt.ylim(0.147, 0.225)
@@ -77,5 +77,5 @@ def one_by_one():
     plt.show()
 
 if __name__ == "__main__":
-    one_by_one()
-    # average()
+    # one_by_one()
+    average()
